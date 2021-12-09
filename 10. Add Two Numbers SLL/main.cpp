@@ -85,12 +85,13 @@ Node *addSLL(Node *head1, Node *head2)
 
 int main()
 {
-    Node *head1 = new Node(1);
-    insertNode(&head1, 2);
+    Node *head1 = new Node(2);
+    insertNode(&head1, 4);
     insertNode(&head1, 3);
-    Node *head2 = new Node(1);
-    insertNode(&head2, 3);
-    insertNode(&head2, 4);
+    Node *head2 = new Node(5);
+    insertNode(&head2, 6);
+    insertNode(&head2, 7);
+    insertNode(&head2, 9);
     Node *ans = addSLL(head1, head2);
     recursiveTraversal(ans);
     return 0;
