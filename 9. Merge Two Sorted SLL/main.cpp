@@ -57,7 +57,40 @@ Node *mergeSorted(Node *head1, Node *head2)
     {
         return head1;
     }
-    
+    // swapping head1 and head2 to make head1 point to the lowest value
+    if (head1->data < head2->data)
+    {
+        Node *temp = head1;
+        head1 = head2;
+        head2 = temp;
+    }
+    Node *dummy = new Node(1);
+    Node *current = dummy;
+    while (head1 != NULL && head2 != NULL)
+    {
+        if (head1->data < head2->data)
+        {
+            current->next = head1;
+            head1 = head1->next;
+        }
+        else
+        {
+            current->next = head2;
+            head2 = head2->next;
+        }
+        current = current->next;
+    }
+    if (head1 != NULL)
+    {
+        current->next = head1;
+        head1 = head1->next;
+    }
+    if (head2 != NULL)
+    {
+        current->next = head2;
+        head2 = head2->next;
+    }
+    return dummy->next;
 }
 
 int main()
@@ -68,5 +101,7 @@ int main()
     Node *head2 = new Node(1);
     insertNode(&head2, 3);
     insertNode(&head2, 4);
+    Node *ans = mergeSorted(head1, head2);
+    recursiveTraversal(ans);
     return 0;
 }
