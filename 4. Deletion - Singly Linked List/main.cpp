@@ -59,7 +59,7 @@ int main()
     insertNode(&head, 4);
     insertNode(&head, 5);
     insertNode(&head, 6);
-    // deleteNode(head, 5);
+    deleteNode(head, 5);
     recursiveTraversal(head);
     return 0;
 }
