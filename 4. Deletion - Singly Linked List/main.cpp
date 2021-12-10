@@ -1,16 +1,4 @@
-#include <iostream>
-using namespace std;
-
-struct Node
-{
-    int data;
-    Node *next;
-    Node(int data)
-    {
-        this->data = data;
-        next = NULL;
-    }
-};
+#include "../node.cpp"
 
 void deleteNode(Node *head, int pos)
 {
